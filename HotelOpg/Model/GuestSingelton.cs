@@ -17,7 +17,42 @@ namespace HotelOpg.Model
         private GuestSingelton()
         {
             GuestList = new ObservableCollection<Guest>();
-            
+            GuestList.Add(new Guest(101, "Hamder", "EtSted 2323"));
         }
-    }
+        public static GuestSingelton Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new GuestSingelton();
+                }
+                return instance;
+            }
+        }
+
+        public string GetJson()
+        {
+            string json = JsonConvert.SerializeObject(GuestList);
+            return json;
+        }
+        public void InsertJson(string jsonText)
+        {
+            List<Guest> newList = JsonConvert.DeserializeObject<List<Guest>>(jsonText);
+
+            foreach (var eventItem in newList)
+            {
+                GuestList.Add(eventItem);
+            }
+        }
+
+        public void AddEvent(Guest newEvent)
+        {
+            GuestList.Add(newEvent);
+        }
+
+        public void RemoveEvent(Guest ev)
+        {
+            GuestList.Remove(ev);
+        }
 }
