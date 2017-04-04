@@ -46,13 +46,13 @@ namespace HotelOpg.Model
             }
         }
 
-        public void AddEvent(Guest newEvent)
+        public void AddGuest(Guest newGuest)
         {
-            GuestList.Add(newEvent);
+            GuestList.Add(newGuest);
         }
 
-        public void RemoveEvent(Guest ev)
+        public void RemoveGuest(Guest gv)
         {
-            GuestList.Remove(ev);
+            GuestList.Remove(gv);
         }
 }
