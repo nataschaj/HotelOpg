@@ -55,4 +55,5 @@ namespace HotelOpg.Model
         {
             GuestList.Remove(gv);
         }
+    }
 }
