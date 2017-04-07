@@ -14,7 +14,9 @@ namespace HotelOpg.Facade
         const string serverUrl = "http://localhost:4284/";
         public static string messageError = "";
 
-        public static void getGuest()
+
+        //GET
+        public static async Task<Guest> getGuest()
         {
             using (var client = new HttpClient())
             {
@@ -29,9 +31,11 @@ namespace HotelOpg.Facade
 
                     return Guest;
                 }
+                messageError = response.StatusCode.ToString();
+                return null;
 
             }
-
+          
         }
 
     }
