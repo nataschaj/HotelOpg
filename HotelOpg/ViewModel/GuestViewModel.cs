@@ -62,10 +62,17 @@ namespace HotelOpg.ViewModel
             set
             {
                 GuestSingelton.Instance.GuestList = value;
-                //OnPropertyChanged(nameof(GuestList));
+                OnPropertyChanged(nameof(GuestList));
             }
         }
 
+        protected virtual void OnPropertyChanged(string PropertyName)
+        {
+            if (PropertyName != null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
+            }
+        }
 
         public GuestViewModel()
         {
