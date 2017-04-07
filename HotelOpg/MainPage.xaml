@@ -12,7 +12,7 @@
         <Grid.DataContext>
             <ViewModel:GuestViewModel/>
         </Grid.DataContext>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="370" Margin="192,66,0,0" VerticalAlignment="Top" Width="158" Background="#baf4e4" SelectedItem="{Binding SingletonRef}" ItemsSource="{Binding SelectedGuest}"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="370" Margin="192,66,0,0" VerticalAlignment="Top" Width="158" Background="#baf4e4" SelectedItem="{Binding SingletonRef}" ItemsSource="{Binding SingletonRef.GuestList}"/>
         <TextBlock x:Name="Guest" HorizontalAlignment="Left" Margin="192,41,0,0" TextWrapping="Wrap" Text="Liste over gæster" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,66,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="10,108,0,0" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Top"/>

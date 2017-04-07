@@ -12,16 +12,19 @@ namespace HotelOpg.Model
     public class GuestSingelton : INotifyPropertyChanged 
     {
         public ObservableCollection<Guest> GuestList { get; set; }
-
         private static GuestSingelton instance;
-
         public event PropertyChangedEventHandler PropertyChanged;
+
+
+
 
         private GuestSingelton()
         {
             GuestList = new ObservableCollection<Guest>();
-            GuestList.Add(new Guest(101, "Hamder", "EtSted 2323"));
+           // GuestList.Add(new Guest(101, "Hamder", "EtSted 2323"));
         }
+
+
         public static GuestSingelton Instance
         {
             get
@@ -39,6 +42,9 @@ namespace HotelOpg.Model
             string json = JsonConvert.SerializeObject(GuestList);
             return json;
         }
+
+
+
         public void InsertJson(string jsonText)
         {
             List<Guest> newList = JsonConvert.DeserializeObject<List<Guest>>(jsonText);
@@ -49,6 +55,7 @@ namespace HotelOpg.Model
             }
         }
 
+
         public void AddGuest(Guest newGuest)
         {
             GuestList.Add(newGuest);
@@ -57,6 +64,15 @@ namespace HotelOpg.Model
         public void RemoveGuest(Guest gv)
         {
             GuestList.Remove(gv);
+        }
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            if (propertyName != null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+
         }
     }
 }
