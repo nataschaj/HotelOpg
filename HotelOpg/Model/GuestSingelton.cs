@@ -5,14 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace HotelOpg.Model
 {
-    public class GuestSingelton
+    public class GuestSingelton : INotifyPropertyChanged 
     {
         public ObservableCollection<Guest> GuestList { get; set; }
 
         private static GuestSingelton instance;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private GuestSingelton()
         {

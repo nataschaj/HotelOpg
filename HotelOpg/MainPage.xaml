@@ -1,14 +1,18 @@
 ﻿<Page
-    x:Class="HotelOpg.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:HotelOpg"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:HotelOpg.ViewModel"
+    x:Class="HotelOpg.MainPage"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,7,0,-7">
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="370" Margin="192,66,0,0" VerticalAlignment="Top" Width="158" Background="#baf4e4"/>
+        <Grid.DataContext>
+            <ViewModel:GuestViewModel/>
+        </Grid.DataContext>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="370" Margin="192,66,0,0" VerticalAlignment="Top" Width="158" Background="#baf4e4" SelectedItem="{Binding SingletonRef}" ItemsSource="{Binding SelectedGuest}"/>
         <TextBlock x:Name="Guest" HorizontalAlignment="Left" Margin="192,41,0,0" TextWrapping="Wrap" Text="Liste over gæster" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,66,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="10,108,0,0" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Top"/>
