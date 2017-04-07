@@ -11,25 +11,25 @@ namespace HotelOpg.Handler
 {
     class MyGuestHandler
     {
-        GuestViewModel GuestVM;
+        //GuestViewModel GuestVM;
 
-        public MyGuestHandler(GuestViewModel gv)
-        {
-            GuestVM = gv;
-        }
+        //public MyGuestHandler(GuestViewModel gv)
+        //{
+        //    GuestVM = gv;
+        //}
 
-        public void CreateGuest()
-        {
-            Guest newGuest = new Guest(GuestVM.Guest_No, GuestVM.Name, GuestVM.Address);
+        //public void CreateGuest()
+        //{
+        //    Guest newGuest = new Guest(GuestVM.Guest_No, GuestVM.Name, GuestVM.Address);
 
-            GuestViewModel.AddGuest(newGuest);
-            PersistencyGuest.GemDataTilAsync();
-        }
+        //    GuestViewModel.AddGuest(newGuest);
+        //    PersistencyGuest.GemDataTilAsync();
+        //}
 
-        public void DeleteGuest(Guest gv)
-        {
-            GuestViewModel.RemoveGuest(gv);
-            PersistencyGuest.GemDataTilAsync();
-        }
+        //public void DeleteGuest(Guest gv)
+        //{
+        //    GuestViewModel.RemoveGuest(gv);
+        //    PersistencyGuest.GemDataTilAsync();
+        //}
     }
 }

@@ -8,16 +8,17 @@
     x:Class="HotelOpg.MainPage"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,7,0,-7">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,7,-399,-7">
         <Grid.DataContext>
             <ViewModel:GuestViewModel/>
         </Grid.DataContext>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="370" Margin="192,66,0,0" VerticalAlignment="Top" Width="158" Background="#baf4e4" SelectedItem="{Binding SingletonRef}" ItemsSource="{Binding SingletonRef.GuestList}"/>
-        <TextBlock x:Name="Guest" HorizontalAlignment="Left" Margin="192,41,0,0" TextWrapping="Wrap" Text="Liste over gæster" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,66,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="10,108,0,0" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" Text="Adresse" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Tilføj" HorizontalAlignment="Left" Margin="14,200,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Guest" HorizontalAlignment="Left" Margin="192,61,0,0" TextWrapping="Wrap" Text="Liste over gæster" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,81,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="134"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="10,118,0,0" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Top" Width="134"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="10,155,0,0" TextWrapping="Wrap" Text="Adresse" VerticalAlignment="Top" Width="134"/>
+        <Button x:Name="button" Content="Tilføj" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top" Width="134"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Background="#acc0e0" Height="259" Margin="149,81,0,0" VerticalAlignment="Top" Width="201" ItemsSource="{Binding GuestList}" SelectedItem="{Binding SelectedGuest}"/>
+        <Button x:Name="button_Copy" Content="Fjern" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Width="134"/>
 
     </Grid>
 </Page>
