@@ -8,17 +8,30 @@
     x:Class="HotelOpg.MainPage"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,7,-399,-7">
+    <Grid Margin="0,7,0,-7">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0"/>
+                <GradientStop Color="#FF005D66" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.DataContext>
             <ViewModel:GuestViewModel/>
         </Grid.DataContext>
-        <TextBlock x:Name="Guest" HorizontalAlignment="Left" Margin="192,61,0,0" TextWrapping="Wrap" Text="Liste over gæster" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,81,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="134"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="10,118,0,0" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Top" Width="134"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="10,155,0,0" TextWrapping="Wrap" Text="Adresse" VerticalAlignment="Top" Width="134"/>
-        <Button x:Name="button" Content="Tilføj" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top" Width="134"/>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Background="#acc0e0" Height="259" Margin="149,81,0,0" VerticalAlignment="Top" Width="201" ItemsSource="{Binding GuestList}" SelectedItem="{Binding SelectedGuest}"/>
-        <Button x:Name="button_Copy" Content="Fjern" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Width="134"/>
+        <TextBlock x:Name="Guest" FontSize="30" HorizontalAlignment="Left" Margin="69,28,0,0" TextWrapping="Wrap" Text="Liste over gæster" VerticalAlignment="Top" Foreground="#FF134B4B"/>
+        <TextBox TextAlignment="Center" x:Name="textBox" HorizontalAlignment="Left" Margin="10,357,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="340"/>
+        <TextBox TextAlignment="Center" x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="10,403,0,0" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Top" Width="340"/>
+        <TextBox TextAlignment="Center" x:Name="textBox2" HorizontalAlignment="Left" Margin="10,449,0,0" TextWrapping="Wrap" Text="Adresse" VerticalAlignment="Top" Width="340"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="259" Margin="10,81,0,0" VerticalAlignment="Top" Width="340" ItemsSource="{Binding GuestList}" SelectedItem="{Binding SelectedGuest}">
+            <ListView.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FFC1D7D9" Offset="1"/>
+                </LinearGradientBrush>
+            </ListView.Background>
+        </ListView>
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="Tilføj" Margin="10,499,0,0" VerticalAlignment="Top" Height="135" Width="168" Foreground="#FF053603"/>
+        <AppBarButton x:Name="appBarButton1" HorizontalAlignment="Left" Icon="Delete" Label="Slet" Margin="183,499,0,0" VerticalAlignment="Top" Width="167" Height="135" Foreground="#FF7C0B0B"/>
 
     </Grid>
 </Page>
