@@ -21,10 +21,6 @@ namespace HotelOpg.Model
         public string Name { get; set; }
         public string Address { get; set; }
   
-       
-       
-        
-        
 
         public Guest SelectedGuest
         {
@@ -37,15 +33,10 @@ namespace HotelOpg.Model
             }
         }
 
-
         private GuestSingelton()
         {
             GuestList = new ObservableCollection<Guest>();
-           //GuestList.Add(new Guest(101, "Hamder", "EtSted 2323"));
         }
-
-        
-
 
         public static GuestSingelton Instance
         {
@@ -58,37 +49,6 @@ namespace HotelOpg.Model
                 return instance;
             }
         }
-
-       
-
-        //public string GetJson()
-        //{
-        //    string json = JsonConvert.SerializeObject(GuestList);
-        //    return json;
-        //}
-
-
-
-        //public void InsertJson(string jsonText)
-        //{
-        //    List<Guest> newList = JsonConvert.DeserializeObject<List<Guest>>(jsonText);
-
-        //    foreach (var eventItem in newList)
-        //    {
-        //        GuestList.Add(eventItem);
-        //    }
-        //}
-
-
-        //public void AddGuest(Guest newGuest)
-        //{
-        //    GuestList.Add(newGuest);
-        //}
-
-        //public void RemoveGuest(Guest gv)
-        //{
-        //    GuestList.Remove(gv);
-        //}
 
         private void OnPropertyChanged(string propertyName)
         {

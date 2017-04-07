@@ -12,12 +12,13 @@ namespace HotelOpg.Facade
 {
     public class GuestFacade
     {
-        const string serverUrl = "http://localhost:9271/api/";
+        const string serverUrl = "http://localhost:9271/api/"; 
         private HttpClientHandler handler;
         public static string messageError = "";
 
 
         //GET
+        //Gider ikke virker, ved ikke hvorfor
         //public static async Task<ObservableCollection<Guest>> getGuest()
         //{
         //    using (var client = new HttpClient())
@@ -46,22 +47,20 @@ namespace HotelOpg.Facade
         //}
 
 
-        public async Task<ObservableCollection<Guest>> GetAllGuests()
+        public async Task<ObservableCollection<Guest>> GetGuest()
         {
             handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true;
-            //true if the default credentials are used; otherwise false. will use authentication credentials from the logged on user on your pc.
-
+            
             using (HttpClient client = new HttpClient(handler))
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-
+                string urlString = "api/Guests/";
                 var task = client.GetAsync("Guests");
 
                 HttpResponseMessage response = await task;
                 response.EnsureSuccessStatusCode();
-                // check for response code (if response is not 200 throw exception)
                 ObservableCollection<Guest> guestList = await response.Content.ReadAsAsync<ObservableCollection<Guest>>();
 
                 return guestList;

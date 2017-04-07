@@ -24,8 +24,6 @@ namespace HotelOpg.Persistency
 
         //}
 
-
-
         //public static async void HentDataTilDiskAsync()
         //{
         //    try
