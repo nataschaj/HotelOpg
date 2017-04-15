@@ -90,6 +90,8 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <None Include="Word Dokument m. Skitse\HotelOPG_PDF.pdf" />
+    <None Include="Word Dokument m. Skitse\HotelOPG_WORD.pdf.docx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
